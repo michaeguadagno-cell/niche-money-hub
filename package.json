@@ -1,0 +1,16 @@
+{
+  "name": "niche-money-hub",
+  "version": "1.0.0",
+  "description": "Static landing page that directs visitors to major consumer niches and exposes **five monetization surfaces**:",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node tests/run-tests.js",
+    "verify:launch": "node tests/launch-verify.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
