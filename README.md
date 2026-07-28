@@ -114,9 +114,31 @@ node tests/run-tests.js
 
 Tests import the **shipped** `js/affiliate.js` and `js/click-store.js` (no re-implementation).
 
-## Deploy (optional)
+## Deploy
 
-Upload the folder to any static host (Netlify, Cloudflare Pages, GitHub Pages, S3, etc.). No Node runtime required for visitors.
+### Live repo (already published)
+
+**Code:** https://github.com/michaeguadagno-cell/niche-money-hub  
+
+**One-time step to get a public site URL (takes ~30 seconds):**
+
+1. Open **[Repo → Settings → Pages](https://github.com/michaeguadagno-cell/niche-money-hub/settings/pages)**  
+2. Under **Build and deployment → Source**, choose **GitHub Actions**  
+3. Open **[Actions](https://github.com/michaeguadagno-cell/niche-money-hub/actions)** → **Deploy to GitHub Pages** → **Run workflow** (or push any commit)
+
+**Public URL after that:**  
+https://michaeguadagno-cell.github.io/niche-money-hub/
+
+(Actions cannot auto-create the Pages site on first deploy — GitHub requires that one Settings click.)
+
+**Public CDN URL (works now — full HTML/CSS/JS):**  
+https://cdn.jsdelivr.net/gh/michaeguadagno-cell/niche-money-hub@main/index.html
+
+**Local:** open `C:\Users\13475\niche-money-hub\index.html` or `npx --yes serve .`
+
+**Netlify (optional):** `npx netlify login` then `npx netlify deploy --prod --dir=.`
+
+No Node runtime required for visitors on any static host.
 
 ## FTC / legal
 
