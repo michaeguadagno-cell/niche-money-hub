@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Niche Money Hub — explore major consumer niches with affiliate-ready links, CPC ad slots, and partner referrals."
+    />
+    <title>Niche Money Hub — Biggest Niches, Affiliate-Ready</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="logo" href="#top">Niche<span>Money</span>Hub</a>
+        <nav class="nav" aria-label="Primary">
+          <a href="#niches">Niches</a>
+          <a href="#monetize">Monetize</a>
+          <a href="#how">How it pays</a>
+          <a href="#lead">Deals list</a>
+          <a href="#operator">Operator</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero__grid">
+          <div>
+            <h1>Direct people to the biggest niches — and earn on every path.</h1>
+            <p class="hero__lead">
+              A clean directory of high-demand consumer niches. Each card links out with
+              affiliate/referral tracking placeholders. Ad slots and a lead capture form
+              give you multiple revenue surfaces on one page.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#niches">Browse niches</a>
+              <a class="btn btn--ghost" href="#how">See 5 ways this can pay</a>
+            </div>
+            <ul class="money-ways" aria-label="Monetization paths">
+              <li><strong>1</strong> Niche affiliate redirects (your ref/aff codes on outbound links)</li>
+              <li><strong>2</strong> Company / brand referral links inside each niche</li>
+              <li><strong>3</strong> CPC / display ad slots (paste AdSense or similar when approved)</li>
+              <li><strong>4</strong> Featured / sponsored partner placement</li>
+              <li><strong>5</strong> Email / lead capture for future list monetization</li>
+            </ul>
+          </div>
+          <aside>
+            <!-- CPC / display ad slot (top of funnel) -->
+            <div
+              class="ad-slot ad-slot--sidebar"
+              data-ad-slot="hero-sidebar"
+              data-monetization="cpc"
+              role="complementary"
+              aria-label="Advertisement placeholder"
+            >
+              <div class="ad-slot__label">CPC ad slot</div>
+              <p class="ad-slot__title">Your ad network here</p>
+              <p class="ad-slot__note">
+                Click logs a demo event. Replace this block with Google AdSense, Media.net,
+                Ezoic, or another network snippet after approval.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Leaderboard CPC slot -->
+      <div class="container">
+        <div
+          class="ad-slot ad-slot--leaderboard"
+          data-ad-slot="leaderboard-top"
+          data-monetization="cpc"
+          role="complementary"
+          aria-label="Leaderboard advertisement placeholder"
+        >
+          <div class="ad-slot__label">CPC leaderboard</div>
+          <p class="ad-slot__title">728×90 / responsive display unit</p>
+          <p class="ad-slot__note">Paste network code here · clicks are recorded for demo</p>
+        </div>
+      </div>
+
+      <section class="section" id="niches" aria-labelledby="niches-heading">
+        <div class="container">
+          <div class="section__header">
+            <div>
+              <h2 id="niches-heading">Biggest consumer niches</h2>
+              <p class="section__sub">
+                Each primary CTA and partner link is an outbound URL with
+                <code>ref</code>, <code>aff</code>, and <code>utm_*</code> tracking params.
+              </p>
+            </div>
+          </div>
+          <div id="niche-grid" class="niche-grid" data-region="niche-grid">
+            <!-- Filled by js/app.js from niches.js data -->
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="monetize" aria-labelledby="monetize-heading">
+        <div class="container">
+          <div class="section__header">
+            <div>
+              <h2 id="monetize-heading">Extra monetization surfaces</h2>
+              <p class="section__sub">
+                Sponsored partner + lead capture — secondary paths beyond niche CTAs and CPC.
+              </p>
+            </div>
+          </div>
+          <div class="mono-grid">
+            <div
+              id="featured-partner"
+              class="panel"
+              data-monetization="sponsored"
+              data-region="featured-partner"
+            >
+              <!-- Filled by app.js -->
+            </div>
+            <div class="panel" id="lead" data-monetization="lead" data-region="lead-capture">
+              <h2 id="lead-headline">Get weekly deal digests</h2>
+              <p id="lead-subhead" class="muted"></p>
+              <form id="lead-form" class="lead-form" novalidate>
+                <label for="lead-email">Email</label>
+                <input
+                  id="lead-email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                />
+                <button id="lead-submit" class="btn btn--primary btn--block" type="submit">
+                  Join free list
+                </button>
+                <p id="lead-privacy" class="muted"></p>
+                <p id="lead-status" hidden></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="how" aria-labelledby="how-heading">
+        <div class="container">
+          <div class="section__header">
+            <div>
+              <h2 id="how-heading">How the five money paths work</h2>
+              <p class="section__sub">
+                This page is the product surface. Live payouts need network accounts, traffic, and compliance.
+              </p>
+            </div>
+          </div>
+          <div class="how-grid">
+            <article class="how-card">
+              <span class="tag">Path 1</span>
+              <h3>Niche affiliate links</h3>
+              <p>
+                You join Amazon Associates, ShareASale, CJ, Impact, etc. Replace each niche
+                <code>baseUrl</code> in <code>js/niches.js</code> with your tracked link. You earn when visitors buy.
+              </p>
+            </article>
+            <article class="how-card">
+              <span class="tag">Path 2</span>
+              <h3>Brand / company referrals</h3>
+              <p>
+                Many brands (Credit Karma, Booking, Coursera) run their own affiliate programs.
+                Partner links under each card point at those companies with your ref codes.
+              </p>
+            </article>
+            <article class="how-card">
+              <span class="tag">Path 3</span>
+              <h3>CPC / display ads</h3>
+              <p>
+                Networks pay per click or impression (e.g. AdSense). Paste their script into the
+                dashed ad-slot regions. Approval often needs real content and traffic first.
+              </p>
+            </article>
+            <article class="how-card">
+              <span class="tag">Path 4</span>
+              <h3>Sponsored placement</h3>
+              <p>
+                Sell the “Featured Partner” card as a flat-fee sponsorship, or put your best CPA offer there.
+              </p>
+            </article>
+            <article class="how-card">
+              <span class="tag">Path 5</span>
+              <h3>Email / lead list</h3>
+              <p>
+                Capture emails, then monetize the list with promotions (or sell leads where legal).
+                Connect the form to ConvertKit, Mailchimp, or a webhook when ready.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="operator">
+        <div class="container">
+          <div class="operator-bar">
+            <div>
+              <strong>Operator demo:</strong> outbound &amp; ad clicks stored in
+              <code>localStorage</code>
+              · logged so far: <span id="click-count">0</span>
+            </div>
+            <button type="button" class="btn btn--ghost" id="toggle-clicks">
+              Show recent clicks
+            </button>
+          </div>
+          <div id="operator-clicks" class="panel" hidden></div>
+
+          <div class="disclosure">
+            <p>
+              <strong>Affiliate disclosure (stub):</strong> Some links on this site may be
+              affiliate links. We may earn a commission if you click or buy — at no extra cost
+              to you. This is not financial, medical, or legal advice. Replace this stub with
+              counsel-ready copy before public launch.
+            </p>
+            <p>
+              <strong>Where to paste real money links:</strong> see <code>README.md</code> —
+              update <code>DEFAULT_AFFILIATE</code> and each <code>baseUrl</code> in
+              <code>js/niches.js</code>; drop ad-network HTML into elements with
+              <code>data-ad-slot</code>.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          Niche Money Hub · static demo · open <code>index.html</code> or run any static file server.
+          No backend required for visitors.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Order matters: pure helpers → data → store → app -->
+    <script src="js/affiliate.js"></script>
+    <script src="js/click-store.js"></script>
+    <script src="js/niches.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
