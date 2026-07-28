@@ -167,7 +167,7 @@ var NICHES = [
       network: 'amazon'
     },
     partners: [
-      { name: 'Ulta', baseUrl: 'https://www.ulta.com/', blurb: 'Furniture & décor', network: 'generic' },
+      { name: 'Ulta', baseUrl: 'https://www.ulta.com/', blurb: 'Beauty & fragrance', network: 'generic' },
       {
         name: 'Makeup (Amazon)',
         baseUrl: 'https://www.amazon.com/s?k=makeup',
