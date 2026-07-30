@@ -1,6 +1,5 @@
 /**
- * Niche Money Hub — render niches, wire affiliate CTAs, ad slots, click logging.
- * Depends on: affiliate.js, click-store.js, niches.js (classic script tags, no modules).
+ * DealDoor — simple cards, big buttons, click logging.
  */
 (function () {
   'use strict';
@@ -16,10 +15,6 @@
         )
       : null;
 
-  /**
-   * Build tracked outbound URL for a niche/partner/featured link.
-   * Uses resolveOutboundUrl so Amazon gets ?tag=, Booking gets aid=, else generic ref/aff/utm.
-   */
   function tracked(baseUrl, campaign, network) {
     if (typeof resolveOutboundUrl === 'function') {
       return resolveOutboundUrl(baseUrl, DEFAULT_AFFILIATE, {
@@ -49,8 +44,7 @@
   function updateClickCount() {
     var el = document.getElementById('click-count');
     if (!el || !clickStore) return;
-    var n = clickStore.getEvents().length;
-    el.textContent = String(n);
+    el.textContent = String(clickStore.getEvents().length);
   }
 
   function el(tag, className, attrs) {
@@ -75,12 +69,31 @@
     });
   }
 
+  function renderChips() {
+    var root = document.getElementById('topic-chips');
+    if (!root || !NICHES) return;
+    root.innerHTML = '';
+    NICHES.forEach(function (n) {
+      var a = el('a', 'topic-chip', {
+        href: '#card-' + n.id,
+        text: n.icon + ' ' + n.name
+      });
+      a.style.setProperty('--chip-color', n.color);
+      root.appendChild(a);
+    });
+  }
+
   function renderNicheCard(niche) {
-    var card = el('article', 'niche-card', { 'data-niche': niche.id });
+    var card = el('article', 'niche-card', {
+      id: 'card-' + niche.id,
+      'data-niche': niche.id
+    });
     card.style.setProperty('--niche-color', niche.color);
 
     var header = el('div', 'niche-card__header');
-    header.appendChild(el('span', 'niche-card__icon', { text: niche.icon, 'aria-hidden': 'true' }));
+    header.appendChild(
+      el('span', 'niche-card__icon', { text: niche.icon, 'aria-hidden': 'true' })
+    );
     header.appendChild(el('h2', 'niche-card__title', { text: niche.name }));
     card.appendChild(header);
 
@@ -104,10 +117,16 @@
       niche.partners.forEach(function (p) {
         var li = el('li');
         var link = el('a', 'partner-link', {
-          text: p.name + ' — ' + p.blurb,
           'data-monetization': 'affiliate',
           'data-network': p.network || 'generic'
         });
+        link.appendChild(document.createTextNode(p.name));
+        if (p.blurb) {
+          link.appendChild(document.createElement('br'));
+          var sm = document.createElement('small');
+          sm.textContent = p.blurb;
+          link.appendChild(sm);
+        }
         var url = tracked(p.baseUrl, 'partner-' + niche.id, p.network);
         wireOutbound(link, url, niche.name + ' · ' + p.name, 'outbound');
         li.appendChild(link);
@@ -133,10 +152,13 @@
     if (!root || !FEATURED_PARTNER) return;
     root.innerHTML = '';
 
-    var badge = el('span', 'badge badge--sponsored', { text: FEATURED_PARTNER.badge });
-    var title = el('h2', '', { text: FEATURED_PARTNER.title });
-    var name = el('p', 'featured__name', { text: FEATURED_PARTNER.name });
-    var pitch = el('p', 'featured__pitch', { text: FEATURED_PARTNER.pitch });
+    root.appendChild(
+      el('span', 'badge badge--sponsored', { text: FEATURED_PARTNER.badge })
+    );
+    root.appendChild(el('h2', 'panel__title', { text: FEATURED_PARTNER.title }));
+    root.appendChild(el('p', 'featured__name', { text: FEATURED_PARTNER.name }));
+    root.appendChild(el('p', 'featured__pitch', { text: FEATURED_PARTNER.pitch }));
+
     var url = tracked(
       FEATURED_PARTNER.baseUrl,
       'featured-partner',
@@ -148,11 +170,6 @@
       'data-network': FEATURED_PARTNER.network || 'amazon'
     });
     wireOutbound(cta, url, 'Featured · ' + FEATURED_PARTNER.name, 'sponsored');
-
-    root.appendChild(badge);
-    root.appendChild(title);
-    root.appendChild(name);
-    root.appendChild(pitch);
     root.appendChild(cta);
   }
 
@@ -176,8 +193,7 @@
       record('lead-capture://newsletter', email ? 'lead:' + email : 'lead:empty', 'lead');
       var status = document.getElementById('lead-status');
       if (status) {
-        status.textContent =
-          'Thanks! (Demo only — connect Mailchimp/ConvertKit/etc. in README to collect real emails.)';
+        status.textContent = 'Got it! (Demo — real email list comes later.)';
         status.hidden = false;
       }
       form.reset();
@@ -185,14 +201,13 @@
   }
 
   function wireAdSlots() {
-    var slots = document.querySelectorAll('[data-ad-slot]');
-    slots.forEach(function (slot) {
+    document.querySelectorAll('[data-ad-slot]').forEach(function (slot) {
       var id = slot.getAttribute('data-ad-slot') || 'unknown';
       slot.addEventListener('click', function () {
         record('ad-slot://' + id, 'CPC slot ' + id, 'ad-slot');
         var note = slot.querySelector('.ad-slot__note');
         if (note) {
-          note.textContent = 'Click logged (demo). Paste your AdSense / Media.net / Ezoic snippet here when approved.';
+          note.textContent = 'Click saved. Real ads can go here later.';
         }
       });
     });
@@ -202,6 +217,7 @@
     document.querySelectorAll('a[href^="#"]').forEach(function (a) {
       a.addEventListener('click', function (e) {
         var id = a.getAttribute('href').slice(1);
+        if (!id) return;
         var target = document.getElementById(id);
         if (target) {
           e.preventDefault();
@@ -209,6 +225,14 @@
         }
       });
     });
+  }
+
+  function escapeHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
   }
 
   function showOperatorPanel() {
@@ -222,7 +246,7 @@
         var events = clickStore.getEvents();
         panel.innerHTML =
           events.length === 0
-            ? '<p class="muted">No clicks yet. Click a niche CTA or ad slot.</p>'
+            ? '<p class="tiny">No clicks yet. Tap a big button first.</p>'
             : '<ul class="click-log">' +
               events
                 .slice()
@@ -234,11 +258,9 @@
                     escapeHtml(ev.label) +
                     '</strong> · ' +
                     escapeHtml(ev.kind) +
-                    '<br><span class="muted">' +
+                    '<br><span class="tiny">' +
                     escapeHtml(ev.destination) +
-                    '</span><br><time>' +
-                    new Date(ev.timestamp).toLocaleString() +
-                    '</time></li>'
+                    '</span></li>'
                   );
                 })
                 .join('') +
@@ -247,15 +269,8 @@
     });
   }
 
-  function escapeHtml(str) {
-    return String(str)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
-  }
-
   function boot() {
+    renderChips();
     renderNiches();
     renderFeatured();
     renderLeadCapture();
