@@ -269,12 +269,68 @@
     });
   }
 
+  var SHARE_URL =
+    'https://raw.githack.com/michaeguadagno-cell/niche-money-hub/main/index.html';
+  var SHARE_TEXT =
+    'Free deal page — pick a topic, tap a button: ' + SHARE_URL;
+
+  function wireShare() {
+    var btn = document.getElementById('copy-share-btn');
+    var status = document.getElementById('copy-status');
+    var msg = document.getElementById('share-message');
+    if (msg) msg.textContent = SHARE_TEXT;
+    if (!btn) return;
+
+    btn.addEventListener('click', function () {
+      function ok() {
+        if (status) {
+          status.hidden = false;
+          status.textContent = 'Link copied!';
+        }
+        btn.textContent = 'Copied!';
+        setTimeout(function () {
+          btn.textContent = 'Copy link';
+        }, 2000);
+        record(SHARE_URL, 'share-copy', 'lead');
+      }
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(SHARE_TEXT).then(ok).catch(function () {
+          fallbackCopy();
+        });
+      } else {
+        fallbackCopy();
+      }
+
+      function fallbackCopy() {
+        try {
+          var ta = document.createElement('textarea');
+          ta.value = SHARE_TEXT;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'fixed';
+          ta.style.left = '-9999px';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          ok();
+        } catch (e) {
+          if (status) {
+            status.hidden = false;
+            status.textContent = 'Copy failed — select the text above.';
+          }
+        }
+      }
+    });
+  }
+
   function boot() {
     renderChips();
     renderNiches();
     renderFeatured();
     renderLeadCapture();
     wireAdSlots();
+    wireShare();
     initNavScroll();
     showOperatorPanel();
     updateClickCount();
