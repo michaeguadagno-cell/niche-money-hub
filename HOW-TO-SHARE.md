@@ -2,6 +2,8 @@
 
 ## Best link (works as a real webpage)
 
+**Canonical live URL (same as LIVE.md):**
+
 https://raw.githack.com/michaeguadagno-cell/niche-money-hub/main/index.html
 
 ## Ready-to-copy text

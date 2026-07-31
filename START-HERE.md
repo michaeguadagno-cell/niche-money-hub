@@ -1,19 +1,20 @@
-# START HERE (when you’re back)
+# START HERE
 
-You were out ~1 hour. This is what was set up for you — **no decisions needed yet**.
+## Your live money page (open this)
 
----
+**https://raw.githack.com/michaeguadagno-cell/niche-money-hub/main/index.html**
 
-## Open your site (30 seconds)
+That is the **only** public link you need. It is a real webpage (not source code).
 
-**Easiest online:**  
-https://raw.githack.com/michaeguadagno-cell/niche-money-hub/main/index.html
+Full operator detail: **`LIVE.md`**
 
-**On this PC:**  
-1. Double-click `OPEN-SITE.bat` in this folder  
-2. Or open http://127.0.0.1:8787/ if a server is already running  
+**On this PC:** double-click `OPEN-SITE.bat` → http://127.0.0.1:8787/
 
 You should see **DealDoor**: “Just pick a box” + big colorful topic buttons.
+
+### Paste real affiliate ID (when approved)
+
+Open `js/niches.js` → set `amazonTag: 'yoursite-20'` (your Amazon Store ID).
 
 ---
 

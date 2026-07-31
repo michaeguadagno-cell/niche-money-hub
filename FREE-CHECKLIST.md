@@ -18,12 +18,13 @@ Check boxes as you go. None of this requires a credit card.
 
 ### 1. Open and save your public link
 
-Live now:  
+**Canonical live URL** (see `LIVE.md`):  
 https://raw.githack.com/michaeguadagno-cell/niche-money-hub/main/index.html
 
-- [ ] Open it on your phone
+- [ ] Open it on your phone (must show colored boxes, not code)
 - [ ] Bookmark it
 - [ ] Text it to yourself
+- [ ] Use **Copy link** on the page Share section
 
 ### 2. Optional: GitHub Pages (nicer URL)
 

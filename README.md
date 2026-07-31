@@ -4,17 +4,19 @@
 
 Simple landing page for everyone — short words, big buttons, free to host.
 
-## Open the site
+## Live public URL (canonical)
+
+**https://raw.githack.com/michaeguadagno-cell/niche-money-hub/main/index.html**
+
+See **`LIVE.md`** — do not use GitHub blob/raw or jsDelivr (those show code).
 
 | How | Link |
 |-----|------|
-| **Online (works now)** | https://raw.githack.com/michaeguadagno-cell/niche-money-hub/main/index.html |
+| **Online** | https://raw.githack.com/michaeguadagno-cell/niche-money-hub/main/index.html |
 | **This PC** | Double-click `OPEN-SITE.bat` → http://127.0.0.1:8787/ |
-| **GitHub** | https://github.com/michaeguadagno-cell/niche-money-hub |
+| **GitHub source** | https://github.com/michaeguadagno-cell/niche-money-hub |
 
-Read **`START-HERE.md`** when you come back from being away.  
-Owner free tasks: **`FREE-CHECKLIST.md`**.  
-Sharing text: **`HOW-TO-SHARE.md`**.
+Owner path: **`START-HERE.md`** · **`FREE-CHECKLIST.md`** · **`HOW-TO-SHARE.md`** · **`LIVE.md`**
 
 ## Teach Grok (free)
 
