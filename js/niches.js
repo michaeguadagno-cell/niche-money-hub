@@ -45,20 +45,25 @@ var NICHES = [
     id: 'health',
     name: 'Health',
     icon: '💪',
-    pitch: 'Vitamins. Fitness. Feel better gear.',
+    pitch: 'Isometrics. Budget wellness. Longevity stacks.',
     color: '#22c55e',
     primaryCta: {
-      label: 'Shop health stuff →',
-      baseUrl: 'https://www.amazon.com/s?k=vitamins+supplements',
-      partner: 'Amazon Associates',
-      network: 'amazon'
+      label: 'Open free health guide →',
+      baseUrl: 'health.html',
+      partner: 'DealDoor Health Guide',
+      network: 'internal'
     },
     partners: [
-      { name: 'Food tracker', baseUrl: 'https://www.myfitnesspal.com/', blurb: 'Track meals', network: 'generic' },
+      {
+        name: 'Shop vitamins',
+        baseUrl: 'https://www.amazon.com/s?k=vitamins+supplements',
+        blurb: 'Amazon health aisle',
+        network: 'amazon'
+      },
       {
         name: 'Home gym',
         baseUrl: 'https://www.amazon.com/s?k=home+gym+equipment',
-        blurb: 'Shop gear',
+        blurb: 'Bands & mats',
         network: 'amazon'
       }
     ]
