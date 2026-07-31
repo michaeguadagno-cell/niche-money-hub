@@ -234,6 +234,10 @@ test('niches data has major niches with primary CTA baseUrls', function () {
   assert.ok(niches.DEFAULT_AFFILIATE.bookingAid);
   niches.NICHES.forEach(function (n) {
     assert.ok(n.name && n.pitch && n.primaryCta && n.primaryCta.baseUrl);
+    if (n.primaryCta.network === 'internal') {
+      assert.ok(n.primaryCta.baseUrl.indexOf('.html') !== -1);
+      return;
+    }
     assert.ok(/^https?:\/\//.test(n.primaryCta.baseUrl));
     var built = resolveOutboundUrl(n.primaryCta.baseUrl, niches.DEFAULT_AFFILIATE, {
       network: n.primaryCta.network || 'generic',
@@ -248,6 +252,10 @@ test('niches data has major niches with primary CTA baseUrls', function () {
       assert.strictEqual(u.searchParams.get('ref'), niches.DEFAULT_AFFILIATE.ref);
     }
   });
+  // Health guide page ships with offers data
+  var healthOffers = require(path.join(root, 'js', 'health-offers.js'));
+  assert.ok(healthOffers.HEALTH_OFFERS.stacks.items.length >= 3);
+  assert.ok(healthOffers.HEALTH_OFFERS.isometrics.items.length >= 1);
   var featured = resolveOutboundUrl(
     niches.FEATURED_PARTNER.baseUrl,
     niches.DEFAULT_AFFILIATE,
