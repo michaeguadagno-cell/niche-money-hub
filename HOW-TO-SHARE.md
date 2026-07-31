@@ -4,13 +4,13 @@
 
 **Canonical live URL (same as LIVE.md):**
 
-https://raw.githack.com/michaeguadagno-cell/niche-money-hub/main/index.html
+https://michaeguadagno-cell.github.io/
 
 ## Ready-to-copy text
 
 ```
 Free deal page — pick a topic, tap a button:
-https://raw.githack.com/michaeguadagno-cell/niche-money-hub/main/index.html
+https://michaeguadagno-cell.github.io/
 ```
 
 ## Easy ways

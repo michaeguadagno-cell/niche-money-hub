@@ -2,9 +2,12 @@
 
 ## Your live money page (open this)
 
-**https://raw.githack.com/michaeguadagno-cell/niche-money-hub/main/index.html**
+**https://michaeguadagno-cell.github.io/**
 
-That is the **only** public link you need. It is a real webpage (not source code).
+That is the **main public link**. Real webpage (not source code). 8 topics + big buttons.
+
+Backup link (also works in browser):  
+https://htmlpreview.github.io/?https://raw.githubusercontent.com/michaeguadagno-cell/niche-money-hub/main/index.html
 
 Full operator detail: **`LIVE.md`**
 

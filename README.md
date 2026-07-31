@@ -6,15 +6,16 @@ Simple landing page for everyone — short words, big buttons, free to host.
 
 ## Live public URL (canonical)
 
-**https://raw.githack.com/michaeguadagno-cell/niche-money-hub/main/index.html**
+**https://michaeguadagno-cell.github.io/**
 
-See **`LIVE.md`** — do not use GitHub blob/raw or jsDelivr (those show code).
+See **`LIVE.md`**. Do not use GitHub blob/raw, jsDelivr, or raw.githack (code or interstitial).
 
 | How | Link |
 |-----|------|
-| **Online** | https://raw.githack.com/michaeguadagno-cell/niche-money-hub/main/index.html |
+| **Online (primary)** | https://michaeguadagno-cell.github.io/ |
+| **Online (backup)** | https://htmlpreview.github.io/?https://raw.githubusercontent.com/michaeguadagno-cell/niche-money-hub/main/index.html |
 | **This PC** | Double-click `OPEN-SITE.bat` → http://127.0.0.1:8787/ |
-| **GitHub source** | https://github.com/michaeguadagno-cell/niche-money-hub |
+| **Source repo** | https://github.com/michaeguadagno-cell/niche-money-hub |
 
 Owner path: **`START-HERE.md`** · **`FREE-CHECKLIST.md`** · **`HOW-TO-SHARE.md`** · **`LIVE.md`**
 
