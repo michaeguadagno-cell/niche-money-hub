@@ -55,15 +55,15 @@ var NICHES = [
     },
     partners: [
       {
+        name: '7-day checklist',
+        baseUrl: 'checklist.html',
+        blurb: 'Free print plan',
+        network: 'internal'
+      },
+      {
         name: 'Shop vitamins',
         baseUrl: 'https://www.amazon.com/s?k=vitamins+supplements',
         blurb: 'Amazon health aisle',
-        network: 'amazon'
-      },
-      {
-        name: 'Home gym',
-        baseUrl: 'https://www.amazon.com/s?k=home+gym+equipment',
-        blurb: 'Bands & mats',
         network: 'amazon'
       }
     ]

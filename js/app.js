@@ -146,7 +146,13 @@
           link.appendChild(sm);
         }
         var url = tracked(p.baseUrl, 'partner-' + niche.id, p.network);
-        wireOutbound(link, url, niche.name + ' · ' + p.name, 'outbound');
+        wireOutbound(
+          link,
+          url,
+          niche.name + ' · ' + p.name,
+          p.network === 'internal' ? 'lead' : 'outbound',
+          { sameTab: p.network === 'internal' }
+        );
         li.appendChild(link);
         list.appendChild(li);
       });
