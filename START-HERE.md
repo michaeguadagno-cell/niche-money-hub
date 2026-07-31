@@ -24,6 +24,10 @@ You should see **DealDoor**: “Just pick a box” + big colorful topic buttons.
 | `AGENTS.md` | Rules so every AI keeps the page simple |
 | Skills on Grok | See below — type the slash commands anytime |
 | This file | Your short return checklist |
+| FAQ + Share | On the page: Copy link / Text a friend |
+| `FREE-CHECKLIST.md` | Free steps toward money |
+| `HOW-TO-SHARE.md` | Ready text to send people |
+| `robots.txt` + sitemap | Ready for search later |
 
 ### New Grok skills (free teaching)
 
