@@ -1,0 +1,29 @@
+WHILE YOU WERE OUT — hour batch complete
+========================================
+
+DONE (no login needed from you)
+- FAQ section (simple questions)
+- Share box: Copy link + Text a friend
+- Social/SEO meta tags
+- robots.txt + sitemap.xml
+- FREE-CHECKLIST.md (your free money path)
+- HOW-TO-SHARE.md
+- Better OPEN-SITE.bat + serve-local.js
+- README simplified
+- AGENTS.md + skills still in place
+- Unit tests re-run
+
+OPEN SITE
+- Online: https://raw.githack.com/michaeguadagno-cell/niche-money-hub/main/index.html
+- PC: double-click OPEN-SITE.bat  or  http://127.0.0.1:8787/
+
+READ NEXT
+- START-HERE.md
+- FREE-CHECKLIST.md
+
+STILL NEEDS YOU
+- Amazon Associates approval + tag
+- Optional GitHub Pages click
+- Share the link with real people
+
+Say "I'm back" when home.
