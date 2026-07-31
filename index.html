@@ -5,9 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Pick a topic. Tap a big button. Find deals on money, tech, home, travel, and more."
+      content="Pick a topic. Tap a big button. Find deals on money, tech, home, travel, and more. Free and easy."
     />
-    <title>Deal Door — Pick a topic. Tap a button. Done.</title>
+    <meta name="theme-color" content="#120a24" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="DealDoor — Pick a topic. Tap a button. Done." />
+    <meta
+      property="og:description"
+      content="Free and easy. Pick a box. Tap the big button. See deals."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="DealDoor — Just pick a box" />
+    <meta
+      name="twitter:description"
+      content="Free deals by topic. Super simple. Big buttons."
+    />
+    <title>DealDoor — Pick a topic. Tap a button. Done.</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
@@ -189,6 +203,63 @@
         </div>
       </section>
 
+      <!-- FAQ — simple words -->
+      <section class="section section--faq" id="faq" aria-labelledby="faq-heading">
+        <div class="container">
+          <h2 id="faq-heading" class="section__title section__title--center">Questions?</h2>
+          <p class="section__sub section__sub--center">Short answers.</p>
+          <div class="faq-list">
+            <details class="faq-item" open>
+              <summary>Is this free?</summary>
+              <p>Yes. You can look and tap for free.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Do I need an account?</summary>
+              <p>No. Just pick a topic and tap the big button.</p>
+            </details>
+            <details class="faq-item">
+              <summary>What happens when I tap a button?</summary>
+              <p>A new page opens with shops or deals for that topic.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Is this hard?</summary>
+              <p>No. Look → tap → go. Three steps.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Why do some links say “sponsored”?</summary>
+              <p>
+                This site may earn a small fee if you buy something. You do not pay extra.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- Share this page -->
+      <section class="section section--share" id="share">
+        <div class="container">
+          <div class="share-card">
+            <h2 class="section__title">Like this page?</h2>
+            <p class="section__sub">Send it to a friend. Free.</p>
+            <p class="share-card__text" id="share-message">
+              Free deal page — pick a topic, tap a button:
+              https://raw.githack.com/michaeguadagno-cell/niche-money-hub/main/index.html
+            </p>
+            <div class="share-card__actions">
+              <button type="button" class="btn btn--mega" id="copy-share-btn">
+                Copy link
+              </button>
+              <a
+                class="btn btn--ghost"
+                id="share-sms"
+                href="sms:?&body=Free%20deal%20page%20%E2%80%94%20pick%20a%20topic%2C%20tap%20a%20button%3A%20https%3A%2F%2Fraw.githack.com%2Fmichaeguadagno-cell%2Fniche-money-hub%2Fmain%2Findex.html"
+              >Text a friend</a>
+            </div>
+            <p class="tiny" id="copy-status" hidden>Link copied!</p>
+          </div>
+        </div>
+      </section>
+
       <!-- Operator tools — collapsed, not visitor-facing -->
       <section class="section section--owner" id="owner">
         <div class="container">
@@ -206,6 +277,7 @@
             <p class="tiny disclosure">
               Some links may pay this site a small fee if you buy — at no extra cost to you.
               Not money or medical advice. Owner: put real affiliate tags in <code>js/niches.js</code>.
+              See <code>FREE-CHECKLIST.md</code> and <code>START-HERE.md</code>.
             </p>
           </details>
         </div>
@@ -214,8 +286,13 @@
 
     <footer class="site-footer">
       <div class="container">
-        <p class="footer__brand">🔥 DealDoor</p>
+        <p class="footer__brand">DealDoor</p>
         <p class="tiny">Pick a topic. Tap a button. Find deals.</p>
+        <p class="tiny footer__links">
+          <a href="#topics">Topics</a> ·
+          <a href="#faq">FAQ</a> ·
+          <a href="#share">Share</a>
+        </p>
       </div>
     </footer>
 
