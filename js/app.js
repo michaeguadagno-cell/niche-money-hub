@@ -269,8 +269,8 @@
     });
   }
 
-  var SHARE_URL =
-    'https://raw.githack.com/michaeguadagno-cell/niche-money-hub/main/index.html';
+  // Prefer GitHub Pages user site when live; htmlpreview is a browser-safe fallback
+  var SHARE_URL = 'https://michaeguadagno-cell.github.io/';
   var SHARE_TEXT =
     'Free deal page — pick a topic, tap a button: ' + SHARE_URL;
 
