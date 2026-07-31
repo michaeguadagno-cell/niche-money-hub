@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://michaeguadagno-cell.github.io/niche-money-hub/sitemap.xml
