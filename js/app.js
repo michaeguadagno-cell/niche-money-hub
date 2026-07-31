@@ -16,6 +16,11 @@
       : null;
 
   function tracked(baseUrl, campaign, network) {
+    if (!baseUrl) return '#';
+    // Internal guide pages (e.g. health.html) — no affiliate wrapper
+    if (network === 'internal' || !/^https?:\/\//i.test(baseUrl)) {
+      return baseUrl;
+    }
     if (typeof resolveOutboundUrl === 'function') {
       return resolveOutboundUrl(baseUrl, DEFAULT_AFFILIATE, {
         network: network || DEFAULT_AFFILIATE.defaultNetwork || 'generic',
@@ -60,10 +65,17 @@
     return node;
   }
 
-  function wireOutbound(anchor, destination, label, kind) {
+  function wireOutbound(anchor, destination, label, kind, opts) {
+    opts = opts || {};
     anchor.setAttribute('href', destination);
-    anchor.setAttribute('target', '_blank');
-    anchor.setAttribute('rel', 'noopener noreferrer sponsored');
+    var external = /^https?:\/\//i.test(destination);
+    if (external && !opts.sameTab) {
+      anchor.setAttribute('target', '_blank');
+      anchor.setAttribute('rel', 'noopener noreferrer sponsored');
+    } else {
+      anchor.removeAttribute('target');
+      anchor.setAttribute('rel', 'noopener');
+    }
     anchor.addEventListener('click', function () {
       record(destination, label, kind || 'outbound');
     });
@@ -109,7 +121,13 @@
       'data-monetization': 'affiliate',
       'data-network': niche.primaryCta.network || 'generic'
     });
-    wireOutbound(cta, ctaUrl, niche.name + ' · ' + niche.primaryCta.partner, 'outbound');
+    wireOutbound(
+      cta,
+      ctaUrl,
+      niche.name + ' · ' + niche.primaryCta.partner,
+      niche.primaryCta.network === 'internal' ? 'lead' : 'outbound',
+      { sameTab: niche.primaryCta.network === 'internal' }
+    );
     card.appendChild(cta);
 
     if (niche.partners && niche.partners.length) {
