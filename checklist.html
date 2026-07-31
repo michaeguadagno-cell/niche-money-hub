@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>7-Day Feel Better for Less — Free Checklist | DealDoor</title>
+    <meta name="description" content="Free 7-day checklist: walk, sleep, food, isometrics. Print or save. Not medical advice." />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/health.css" />
+    <style>
+      .check-day{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:.85rem 1rem;margin:0 0 .55rem}
+      .check-day label{display:flex;gap:.65rem;align-items:flex-start;font-weight:700;cursor:pointer}
+      .check-day input{width:1.25rem;height:1.25rem;margin-top:.15rem;flex-shrink:0}
+      .print-only{display:none}
+      @media print{
+        body{background:#fff;color:#000}
+        .site-header,.no-print,.jump-fab,.ad-slot{display:none!important}
+        .check-day{border:1px solid #333;break-inside:avoid}
+        .print-only{display:block}
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header no-print">
+      <div class="container site-header__inner">
+        <a class="logo" href="index.html">Deal<span>Door</span></a>
+        <nav class="nav">
+          <a href="health.html">Health guide</a>
+          <a class="nav__cta" href="#list">Checklist</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container" style="padding:1.5rem 0 3rem;max-width:36rem">
+      <p class="tiny no-print"><a href="health.html">← Health guide</a></p>
+      <h1 class="hero__title" style="font-size:1.85rem">7-day feel better</h1>
+      <p class="hero__lead" style="max-width:none">Free. Cheap. Simple. Check boxes as you go.</p>
+      <div class="disclaimer-banner" role="note">
+        <strong>Not medical advice.</strong> Not a cancer cure. Ask your doctor if you’re sick or on medicine.
+      </div>
+      <div class="cta-row no-print" style="margin-bottom:1.25rem">
+        <button type="button" class="btn btn--health" onclick="window.print()">Print / save PDF</button>
+        <a class="btn btn--ghost" href="health.html#stacks">Supplement stacks →</a>
+      </div>
+      <div id="list">
+        <div class="check-day"><label><input type="checkbox" /><span><strong>Day 1</strong> — Walk 10 min. Drink water. Bed 30 min earlier.</span></label></div>
+        <div class="check-day"><label><input type="checkbox" /><span><strong>Day 2</strong> — Wall sit 3×20 sec. Protein at breakfast.</span></label></div>
+        <div class="check-day"><label><input type="checkbox" /><span><strong>Day 3</strong> — Walk 15 min. Veggies at 2 meals. No soda.</span></label></div>
+        <div class="check-day"><label><input type="checkbox" /><span><strong>Day 4</strong> — Plank 3×15 sec + bridge holds. Screens off 30 min before bed.</span></label></div>
+        <div class="check-day"><label><input type="checkbox" /><span><strong>Day 5</strong> — Walk 20 min. Prep a simple meal (eggs/beans/oats).</span></label></div>
+        <div class="check-day"><label><input type="checkbox" /><span><strong>Day 6</strong> — Full isometric set (wall sit, plank, bridge, palm press).</span></label></div>
+        <div class="check-day"><label><input type="checkbox" /><span><strong>Day 7</strong> — Easy walk. Plan next week. Optional: review vitamins with your doctor.</span></label></div>
+      </div>
+      <section class="no-print" id="email" style="margin-top:2rem">
+        <div class="panel panel--lead">
+          <h2 class="panel__title">Want more free tips?</h2>
+          <p class="panel__sub">Demo only — saves on this device until you connect email later.</p>
+          <form id="check-lead" class="lead-form">
+            <input type="email" id="check-email" required placeholder="your@email.com" autocomplete="email" />
+            <button class="btn btn--mega btn--block" type="submit">Save my spot</button>
+            <p id="check-status" class="tiny" hidden></p>
+          </form>
+        </div>
+        <p class="tiny" style="margin-top:1rem">Shop gear / stacks (affiliate): <a href="health.html#stacks">open health guide</a></p>
+      </section>
+      <p class="print-only tiny">DealDoor · michaeguadagno-cell.github.io/checklist.html · Not medical advice</p>
+    </main>
+    <script src="js/affiliate.js"></script>
+    <script src="js/click-store.js"></script>
+    <script>
+      (function () {
+        var store = typeof createClickStore === 'function'
+          ? createClickStore(localStorage, { createClickEvent: createClickEvent, appendClickEvent: appendClickEvent })
+          : null;
+        document.getElementById('check-lead').addEventListener('submit', function (e) {
+          e.preventDefault();
+          var email = document.getElementById('check-email').value || '';
+          if (store) store.recordClick('lead-capture://checklist', 'lead:' + email, 'lead');
+          var s = document.getElementById('check-status');
+          s.hidden = false;
+          s.textContent = 'Saved on this device (demo).';
+          e.target.reset();
+        });
+        document.documentElement.setAttribute('data-app-ready', 'true');
+      })();
+    </script>
+  </body>
+</html>
