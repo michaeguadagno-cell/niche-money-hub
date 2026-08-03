@@ -256,6 +256,8 @@ test('niches data has major niches with primary CTA baseUrls', function () {
   var healthOffers = require(path.join(root, 'js', 'health-offers.js'));
   assert.ok(healthOffers.HEALTH_OFFERS.stacks.items.length >= 3);
   assert.ok(healthOffers.HEALTH_OFFERS.isometrics.items.length >= 1);
+  var techOffers = require(path.join(root, 'js', 'tech-offers.js'));
+  assert.ok(techOffers.TECH_OFFERS.picks.length >= 5);
   var featured = resolveOutboundUrl(
     niches.FEATURED_PARTNER.baseUrl,
     niches.DEFAULT_AFFILIATE,

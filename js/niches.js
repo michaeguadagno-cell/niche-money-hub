@@ -72,16 +72,21 @@ var NICHES = [
     id: 'tech',
     name: 'Tech',
     icon: '📱',
-    pitch: 'Phones. Laptops. Cool gadgets.',
+    pitch: 'Budget picks. Earbuds. Laptops. Chargers.',
     color: '#3b82f6',
     primaryCta: {
-      label: 'Shop tech deals →',
-      baseUrl: 'https://www.amazon.com/s?k=electronics',
-      partner: 'Amazon Associates',
-      network: 'amazon'
+      label: 'Open tech guide →',
+      baseUrl: 'tech.html',
+      partner: 'DealDoor Tech Guide',
+      network: 'internal'
     },
     partners: [
-      { name: 'Best Buy', baseUrl: 'https://www.bestbuy.com/', blurb: 'Stores & online', network: 'generic' },
+      {
+        name: 'Shop electronics',
+        baseUrl: 'https://www.amazon.com/s?k=electronics',
+        blurb: 'Amazon aisle',
+        network: 'amazon'
+      },
       {
         name: 'Laptops',
         baseUrl: 'https://www.amazon.com/s?k=laptops',
