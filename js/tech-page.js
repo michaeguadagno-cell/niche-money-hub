@@ -77,6 +77,44 @@
         ex.appendChild(art);
       });
     }
+    var ad = document.querySelector('[data-ad-slot="tech-top"]');
+    if (ad) {
+      ad.addEventListener('click', function () {
+        if (clickStore) {
+          try {
+            clickStore.recordClick('ad-slot://tech-top', 'CPC slot tech-top', 'ad-slot');
+          } catch (e) {}
+        }
+        var n = ad.querySelector('.ad-slot__note');
+        if (n) n.textContent = 'Click logged (demo). Paste ad network code when approved.';
+      });
+    }
+    var copyBtn = document.getElementById('tech-copy-btn');
+    var status = document.getElementById('tech-copy-status');
+    var shareUrl = 'https://michaeguadagno-cell.github.io/tech.html';
+    var shareText = 'Budget tech picks: ' + shareUrl;
+    var msg = document.getElementById('tech-share-msg');
+    if (msg) msg.textContent = shareText;
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function () {
+        function ok() {
+          if (status) {
+            status.hidden = false;
+            status.textContent = 'Copied!';
+          }
+          if (clickStore) {
+            try {
+              clickStore.recordClick(shareUrl, 'share-copy-tech', 'lead');
+            } catch (e) {}
+          }
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(shareText).then(ok).catch(ok);
+        } else {
+          ok();
+        }
+      });
+    }
     document.documentElement.setAttribute('data-app-ready', 'true');
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);

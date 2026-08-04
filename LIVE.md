@@ -1,63 +1,53 @@
-# LIVE public site (canonical)
+# LIVE affiliate page (ready to earn after network approval)
 
-## Primary live URL (open & share this)
+## Canonical public URL (open & share)
 
-**https://michaeguadagno-cell.github.io/**
+**https://michaeguadagno-cell.github.io/tech.html**
 
-GitHub user site for DealDoor — real webpage (`text/html`), not source code.
+- Real webpage (`text/html`) — not GitHub code view  
+- Affiliate marketing page: budget tech picks + big shop CTAs  
+- Also live: hub https://michaeguadagno-cell.github.io/ · health · checklist  
 
-If that link is still spinning up (first publish can take a few minutes), use this **browser-proven fallback**:
-
-**https://htmlpreview.github.io/?https://raw.githubusercontent.com/michaeguadagno-cell/niche-money-hub/main/index.html**
-
-(Verified: loads DealDoor with 8 topic cards in a real browser.)
-
-### Do NOT open these (code / broken in browser)
+### Do NOT open
 
 | Avoid | Why |
 |-------|-----|
-| github.com/.../blob/.../index.html | Code viewer |
+| github.com/.../blob/... | Code viewer |
 | raw.githubusercontent.com/... alone | Plain text |
-| cdn.jsdelivr.net/.../index.html | Plain text dump |
-| raw.githack.com/... | Browser interstitial (not the site) |
+| jsDelivr / raw.githack | Plain text or browser interstitial |
 
-### On this PC only
+### On this PC
 
-- Double-click `OPEN-SITE.bat` → http://127.0.0.1:8787/
+`OPEN-SITE.bat` → http://127.0.0.1:8787/tech.html
 
 ---
 
-## Where to paste real money IDs (one place)
+## Where to paste real Amazon tag (one place)
 
-File: **`js/niches.js`** (same file on both repos after sync)
+**File:** `js/niches.js` (and same file on github.io after push)
 
 ```js
-amazonTag: 'yoursite-20',   // Amazon Associates Store ID after free approval
-bookingAid: '1234567',      // Booking partner aid after free approval
-ref: 'YOUR_REF_CODE',
-aff: 'YOUR_AFF_ID',
+amazonTag: 'yoursite-20',  // your Associates Store ID
 ```
 
-1. Apply free: https://affiliate-program.amazon.com/
-2. Replace `YOURTAG-20` with your Store ID
-3. Ask Grok to update and push, or edit + push yourself
+1. Free apply: https://affiliate-program.amazon.com/  
+2. Replace `YOURTAG-20`  
+3. Redeploy / ask Grok to push  
 
-Ad snippets: elements with `data-ad-slot` in `index.html`.
-
----
-
-## Monetization surfaces on the live page
-
-1. **Affiliate / deal CTAs** — topic big buttons + partner links  
-2. **CPC ad slots** — “Sponsored” boxes  
-3. **Featured / sponsored** — hot pick  
-4. **Lead capture** — email form shell  
-5. **Share** — copy link / text a friend  
+All tech CTAs use `buildAmazonAssociatesUrl` / `resolveOutboundUrl` → `?tag=...`
 
 ---
 
-## Free path after the page is live
+## Monetization surfaces on tech.html
 
-See `FREE-CHECKLIST.md` and `HOW-TO-SHARE.md`.
+1. **Affiliate CTAs** — Top 5 picks + extras (Amazon `tag`)  
+2. **CPC ad slot** — `data-ad-slot="tech-top"` (paste AdSense later)  
+3. **Share** — copy link for free traffic  
 
-Honest limit: live page + tracking ≠ bank deposit. Need free network approval + people visiting.
+Hub also has lead form + more ad slots.
+
+---
+
+## Honest limit
+
+Live + tracking ≠ bank deposit. Need free network approval + visitors.

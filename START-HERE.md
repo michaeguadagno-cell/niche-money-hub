@@ -1,23 +1,21 @@
 # START HERE
 
-## Your live money page (open this)
+## Your live affiliate page (open this)
 
-**https://michaeguadagno-cell.github.io/**
+**https://michaeguadagno-cell.github.io/tech.html**
 
-That is the **main public link**. Real webpage (not source code). 8 topics + big buttons.
+Budget tech picks + shop buttons (affiliate-ready). Real HTML, not code.
 
-Backup link (also works in browser):  
-https://htmlpreview.github.io/?https://raw.githubusercontent.com/michaeguadagno-cell/niche-money-hub/main/index.html
+**Hub:** https://michaeguadagno-cell.github.io/  
+**Health:** /health.html · **Checklist:** /checklist.html  
 
-Full operator detail: **`LIVE.md`**
+Full detail: **`LIVE.md`**
 
-**On this PC:** double-click `OPEN-SITE.bat` → http://127.0.0.1:8787/
+**On this PC:** `OPEN-SITE.bat` → http://127.0.0.1:8787/tech.html
 
-You should see **DealDoor**: “Just pick a box” + big colorful topic buttons.
+### Paste real Amazon ID (when approved)
 
-### Paste real affiliate ID (when approved)
-
-Open `js/niches.js` → set `amazonTag: 'yoursite-20'` (your Amazon Store ID).
+`js/niches.js` → `amazonTag: 'yoursite-20'`
 
 ---
 
