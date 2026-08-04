@@ -258,6 +258,13 @@ test('niches data has major niches with primary CTA baseUrls', function () {
   assert.ok(healthOffers.HEALTH_OFFERS.isometrics.items.length >= 1);
   var techOffers = require(path.join(root, 'js', 'tech-offers.js'));
   assert.ok(techOffers.TECH_OFFERS.picks.length >= 5);
+  techOffers.TECH_OFFERS.picks.forEach(function (p) {
+    var built = resolveOutboundUrl(p.baseUrl, niches.DEFAULT_AFFILIATE, {
+      network: p.network || 'amazon',
+      campaign: 'tech-test'
+    });
+    assert.strictEqual(new URL(built).searchParams.get('tag'), niches.DEFAULT_AFFILIATE.amazonTag);
+  });
   var featured = resolveOutboundUrl(
     niches.FEATURED_PARTNER.baseUrl,
     niches.DEFAULT_AFFILIATE,
