@@ -24,6 +24,10 @@ var HUBSPOT_AFFILIATE = {
   utmCampaign: 'hubspot-guide'
 };
 
+/**
+ * Build tracked HubSpot URL. If affiliateUrl is set, use it for primary CTAs.
+ * Otherwise fall back to public HubSpot pages with UTM params.
+ */
 function buildHubSpotUrl(kind) {
   var cfg = HUBSPOT_AFFILIATE;
   var base;
@@ -34,6 +38,7 @@ function buildHubSpotUrl(kind) {
   else if (kind === 'pricing') base = cfg.pricingUrl;
   else if (kind === 'primary') base = cfg.affiliateUrl;
   else base = cfg.affiliateUrl;
+
   try {
     var u = new URL(base);
     if (cfg.utmSource) u.searchParams.set('utm_source', cfg.utmSource);

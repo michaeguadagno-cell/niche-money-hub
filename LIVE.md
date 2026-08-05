@@ -1,53 +1,30 @@
-# LIVE affiliate page (ready to earn after network approval)
+# LIVE — HubSpot affiliate page (not Amazon)
 
-## Canonical public URL (open & share)
+## Canonical URL
 
-**https://michaeguadagno-cell.github.io/tech.html**
+**https://michaeguadagno-cell.github.io/hubspot.html**
 
-- Real webpage (`text/html`) — not GitHub code view  
-- Affiliate marketing page: budget tech picks + big shop CTAs  
-- Also live: hub https://michaeguadagno-cell.github.io/ · health · checklist  
+Also: hub https://michaeguadagno-cell.github.io/
 
-### Do NOT open
+## Paste your HubSpot affiliate link (one place)
 
-| Avoid | Why |
-|-------|-----|
-| github.com/.../blob/... | Code viewer |
-| raw.githubusercontent.com/... alone | Plain text |
-| jsDelivr / raw.githack | Plain text or browser interstitial |
-
-### On this PC
-
-`OPEN-SITE.bat` → http://127.0.0.1:8787/tech.html
-
----
-
-## Where to paste real Amazon tag (one place)
-
-**File:** `js/niches.js` (and same file on github.io after push)
+1. Free join: https://www.hubspot.com/partners/affiliates  
+2. After approval, copy **your** link from the dashboard  
+3. Edit **`js/hubspot-config.js`**:
 
 ```js
-amazonTag: 'yoursite-20',  // your Associates Store ID
+affiliateUrl: 'PASTE_YOUR_HUBSPOT_AFFILIATE_LINK_HERE',
 ```
 
-1. Free apply: https://affiliate-program.amazon.com/  
-2. Replace `YOURTAG-20`  
-3. Redeploy / ask Grok to push  
+4. Push/redeploy  
 
-All tech CTAs use `buildAmazonAssociatesUrl` / `resolveOutboundUrl` → `?tag=...`
+## Surfaces on the page
 
----
+1. HubSpot CTAs (`data-hubspot` / affiliate)  
+2. CPC ad slot  
+3. Email lead shell  
+4. Share / copy  
 
-## Monetization surfaces on tech.html
+## Amazon?
 
-1. **Affiliate CTAs** — Top 5 picks + extras (Amazon `tag`)  
-2. **CPC ad slot** — `data-ad-slot="tech-top"` (paste AdSense later)  
-3. **Share** — copy link for free traffic  
-
-Hub also has lead form + more ad slots.
-
----
-
-## Honest limit
-
-Live + tracking ≠ bank deposit. Need free network approval + visitors.
+Not required for this page. Tech page still uses Amazon-style tags if you want that later.
