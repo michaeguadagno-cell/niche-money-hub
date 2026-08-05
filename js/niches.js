@@ -20,6 +20,33 @@ var DEFAULT_AFFILIATE = {
  */
 var NICHES = [
   {
+    id: 'hubspot',
+    name: 'HubSpot',
+    icon: '🧡',
+    pitch: 'Free CRM. Free affiliate program. Grow a business.',
+    color: '#ff5c35',
+    primaryCta: {
+      label: 'Open HubSpot guide →',
+      baseUrl: 'hubspot.html',
+      partner: 'DealDoor HubSpot Guide',
+      network: 'internal'
+    },
+    partners: [
+      {
+        name: 'Join affiliates (you)',
+        baseUrl: 'https://www.hubspot.com/partners/affiliates',
+        blurb: 'Free to join HubSpot',
+        network: 'generic'
+      },
+      {
+        name: 'Free CRM',
+        baseUrl: 'https://www.hubspot.com/products/crm',
+        blurb: 'Visitor free signup',
+        network: 'generic'
+      }
+    ]
+  },
+  {
     id: 'finance',
     name: 'Money',
     icon: '💰',
