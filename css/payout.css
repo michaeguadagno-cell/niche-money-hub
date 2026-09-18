@@ -1,0 +1,21 @@
+/* Sticky money CTA — used by code.html and crypto-tax.html */
+.pay-sticky {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 70;
+  margin: 0;
+  padding: 0.65rem 1rem calc(0.65rem + env(safe-area-inset-bottom));
+  background: rgba(7, 6, 15, 0.92);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: center;
+}
+
+.pay-sticky .btn {
+  width: min(100%, 28rem);
+}
+
+body {
+  padding-bottom: 5.5rem;
+}
