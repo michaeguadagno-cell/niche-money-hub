@@ -96,7 +96,7 @@
   }
 
   function renderNicheCard(niche) {
-    var card = el('article', 'niche-card', {
+    var card = el('article', niche.focus ? 'niche-card niche-card--focus' : 'niche-card', {
       id: 'card-' + niche.id,
       'data-niche': niche.id
     });
@@ -166,7 +166,13 @@
     var grid = document.getElementById('niche-grid');
     if (!grid) return;
     grid.innerHTML = '';
-    NICHES.forEach(function (n) {
+    var focus = NICHES.filter(function (n) {
+      return n.focus;
+    });
+    var rest = NICHES.filter(function (n) {
+      return !n.focus;
+    });
+    focus.concat(rest).forEach(function (n) {
       grid.appendChild(renderNicheCard(n));
     });
   }
@@ -190,10 +196,16 @@
     );
     var cta = el('a', 'btn btn--accent', {
       text: FEATURED_PARTNER.ctaLabel,
-      'data-monetization': 'sponsored',
-      'data-network': FEATURED_PARTNER.network || 'amazon'
+      'data-monetization': FEATURED_PARTNER.network === 'internal' ? 'lead' : 'sponsored',
+      'data-network': FEATURED_PARTNER.network || 'generic'
     });
-    wireOutbound(cta, url, 'Featured · ' + FEATURED_PARTNER.name, 'sponsored');
+    wireOutbound(
+      cta,
+      url,
+      'Featured · ' + FEATURED_PARTNER.name,
+      FEATURED_PARTNER.network === 'internal' ? 'lead' : 'sponsored',
+      { sameTab: FEATURED_PARTNER.network === 'internal' }
+    );
     root.appendChild(cta);
   }
 
@@ -213,14 +225,55 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var emailInput = form.querySelector('input[type="email"]');
-      var email = emailInput ? emailInput.value : '';
-      record('lead-capture://newsletter', email ? 'lead:' + email : 'lead:empty', 'lead');
+      var email = emailInput ? String(emailInput.value || '').trim() : '';
       var status = document.getElementById('lead-status');
-      if (status) {
-        status.textContent = 'Got it! (Demo — real email list comes later.)';
-        status.hidden = false;
+      if (!email || email.indexOf('@') < 1) {
+        if (status) {
+          status.hidden = false;
+          status.textContent = 'Type a real email first.';
+        }
+        return;
       }
-      form.reset();
+      record('lead-capture://newsletter', 'lead:' + email, 'lead');
+      try {
+        var leads = [];
+        var raw = localStorage.getItem('dealdoor-leads');
+        if (raw) leads = JSON.parse(raw);
+        if (!Array.isArray(leads)) leads = [];
+        leads.push({ email: email, at: Date.now() });
+        localStorage.setItem('dealdoor-leads', JSON.stringify(leads.slice(-200)));
+      } catch (err) {
+        /* ignore */
+      }
+      var inbox = (LEAD_CAPTURE && LEAD_CAPTURE.inbox) || '';
+      function done(ok) {
+        if (status) {
+          status.hidden = false;
+          status.textContent = ok
+            ? 'Got it. Check your inbox if we email you.'
+            : 'Saved on this device. Email send needs a one-time confirm (owner).';
+        }
+        form.reset();
+      }
+      if (!inbox || typeof fetch !== 'function') {
+        done(false);
+        return;
+      }
+      fetch('https://formsubmit.co/ajax/' + encodeURIComponent(inbox), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          email: email,
+          _subject: 'DealDoor deal-alert signup',
+          source: 'https://michaeguadagno-cell.github.io/'
+        })
+      })
+        .then(function (res) {
+          done(res.ok);
+        })
+        .catch(function () {
+          done(false);
+        });
     });
   }
 

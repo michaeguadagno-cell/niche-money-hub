@@ -20,10 +20,72 @@ var DEFAULT_AFFILIATE = {
  */
 var NICHES = [
   {
+    id: 'code',
+    name: 'AI code',
+    icon: '⌨️',
+    pitch: 'A free AI helper that writes code with you.',
+    color: '#22d3ee',
+    primaryCta: {
+      label: 'Open free AI coder →',
+      baseUrl: 'code.html',
+      partner: 'DealDoor OpenCode Guide',
+      network: 'internal'
+    },
+    partners: [
+      {
+        name: 'Try OpenCode',
+        baseUrl: 'https://opencode.ai/go?ref=P09GVJ0ANH',
+        blurb: 'Free AI coder',
+        network: 'direct'
+      },
+      {
+        name: 'More AI tools',
+        baseUrl: 'ai.html',
+        blurb: 'Write, video, design',
+        network: 'internal'
+      },
+      {
+        name: 'Stuck on a bug?',
+        baseUrl: 'fix-code.html',
+        blurb: 'Paste the error',
+        network: 'internal'
+      }
+    ]
+  },
+  {
+    id: 'crypto',
+    name: 'Crypto tax',
+    icon: '🪙',
+    focus: true,
+    pitch: 'Job taxes plus coin trades. Extra time to file ends Oct 15.',
+    color: '#f59e0b',
+    primaryCta: {
+      label: 'Open crypto tax guide →',
+      baseUrl: 'crypto-tax.html',
+      partner: 'DealDoor Koinly Guide',
+      network: 'internal'
+    },
+    partners: [
+      {
+        name: 'Try Koinly',
+        baseUrl:
+          'https://koinly.io/?via=62C62C62&utm_source=dealdoor&utm_medium=affiliate&utm_campaign=crypto-tax',
+        blurb: 'DeFi and many wallets',
+        network: 'direct'
+      },
+      {
+        name: 'Try CoinLedger',
+        baseUrl: 'https://coinledger.io/?fpr=zhcbzz',
+        blurb: 'US exchange trades',
+        network: 'direct'
+      }
+    ]
+  },
+  {
     id: 'hubspot',
     name: 'HubSpot',
     icon: '🧡',
-    pitch: 'Free CRM. Free affiliate program. Grow a business.',
+    pitch: 'Keep names and notes. Free to start.',
     color: '#ff5c35',
     primaryCta: {
       label: 'Open HubSpot guide →',
@@ -42,6 +104,33 @@ var NICHES = [
         name: 'Free CRM',
         baseUrl: 'https://www.hubspot.com/products/crm',
         blurb: 'Visitor free signup',
+        network: 'generic'
+      }
+    ]
+  },
+  {
+    id: 'ai',
+    name: 'AI tools',
+    icon: '🤖',
+    pitch: 'Fix real problems: write, video, design, research.',
+    color: '#8b5cf6',
+    primaryCta: {
+      label: 'Open AI problem guide →',
+      baseUrl: 'ai.html',
+      partner: 'DealDoor AI Guide',
+      network: 'internal'
+    },
+    partners: [
+      {
+        name: 'AI writing guide',
+        baseUrl: 'ai-write.html',
+        blurb: 'Blank page fix',
+        network: 'internal'
+      },
+      {
+        name: 'Browse AI tools',
+        baseUrl: 'https://www.futurepedia.io/',
+        blurb: 'Free discovery list',
         network: 'generic'
       }
     ]
@@ -72,7 +161,7 @@ var NICHES = [
     id: 'health',
     name: 'Health',
     icon: '💪',
-    pitch: 'Isometrics. Budget wellness. Longevity stacks.',
+    pitch: 'Easy moves. Cheap health stuff. Feel better.',
     color: '#22c55e',
     primaryCta: {
       label: 'Open free health guide →',
@@ -230,20 +319,21 @@ var NICHES = [
 ];
 
 var FEATURED_PARTNER = {
-  title: 'Hot pick today',
-  name: 'Shop Amazon',
-  pitch: 'One store. Almost everything. Tap the big yellow button.',
-  baseUrl: 'https://www.amazon.com/',
-  ctaLabel: 'Shop Amazon now →',
-  badge: '⭐ Top pick',
-  network: 'amazon'
+  title: 'Start here',
+  name: 'Job taxes + coin taxes',
+  pitch: 'Got extra time to file? Coin taxes are still due Oct 15.',
+  baseUrl: 'taxes.html',
+  ctaLabel: 'Get the coin report free →',
+  badge: 'Hot pick',
+  network: 'internal'
 };
 
 var LEAD_CAPTURE = {
   headline: 'Want free deal alerts?',
   subhead: 'We email good deals. Free. Easy to stop anytime.',
   buttonLabel: 'Send me deals',
-  privacyNote: 'No spam. You can leave the list any time.'
+  privacyNote: 'No spam. You can leave the list any time.',
+  inbox: typeof LEAD_INBOX === 'string' ? LEAD_INBOX : 'onelifesolutions090118@gmail.com'
 };
 
 if (typeof module !== 'undefined' && module.exports) {
