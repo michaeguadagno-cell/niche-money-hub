@@ -22,15 +22,15 @@
       content="Free deals by topic. Super simple. Big buttons."
     />
     <title>DealDoor — Pick a topic. Tap a button. Done.</title>
+    <link rel="canonical" href="https://michaeguadagno-cell.github.io/" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <!-- Floating “start here” for mobile thumbs -->
     <a class="jump-fab" href="#topics">Pick a topic ↓</a>
 
     <header class="site-header">
       <div class="container site-header__inner">
-        <a class="logo" href="#top" aria-label="Deal Door home">
+        <a class="logo" href="#top" aria-label="DealDoor home">
           <span class="logo__mark" aria-hidden="true">🔥</span>
           <span class="logo__text">Deal<span>Door</span></span>
         </a>
@@ -44,7 +44,6 @@
     </header>
 
     <main id="top">
-      <!-- HERO — big, loud, simple -->
       <section class="hero">
         <div class="hero__glow" aria-hidden="true"></div>
         <div class="container hero__inner">
@@ -55,7 +54,7 @@
           </h1>
           <p class="hero__lead">
             No hard words. No long forms.<br />
-            Tap a topic → hit the big button → you’re in.
+            Tap a topic → hit the big button → you're in.
           </p>
 
           <div class="steps" aria-label="3 easy steps">
@@ -83,7 +82,6 @@
         </div>
       </section>
 
-      <!-- Ad slot — simple label for visitors -->
       <div class="container">
         <div
           class="ad-slot ad-slot--banner"
@@ -98,11 +96,10 @@
         </div>
       </div>
 
-      <!-- HOW — tiny and visual -->
       <section class="section section--how" id="how">
         <div class="container">
           <h2 class="section__title">How this works</h2>
-          <p class="section__sub">3 steps. That’s it.</p>
+          <p class="section__sub">3 steps. That's it.</p>
           <div class="how-simple">
             <article class="how-simple__card">
               <div class="how-simple__emoji" aria-hidden="true">👀</div>
@@ -110,7 +107,7 @@
               <p>See the colored boxes below.</p>
             </article>
             <article class="how-simple__card">
-              <div class="how-simple__emoji" aria-hidden="true">👆</div>
+              <div class="how-simple__emoji" aria-hidden="true">👉</div>
               <h3>Tap</h3>
               <p>Hit the big button on a box you like.</p>
             </article>
@@ -123,7 +120,6 @@
         </div>
       </section>
 
-      <!-- TOPICS — main action -->
       <section class="section section--topics" id="topics" aria-labelledby="topics-heading">
         <div class="container">
           <div class="section__header section__header--center">
@@ -131,7 +127,6 @@
             <p class="section__sub">One tap. New page. Easy.</p>
           </div>
 
-          <!-- Quick jump chips for scanners -->
           <div class="topic-chips" id="topic-chips" aria-label="Jump to a topic">
             <!-- filled by app.js -->
           </div>
@@ -142,7 +137,6 @@
         </div>
       </section>
 
-      <!-- Side ad -->
       <div class="container">
         <div
           class="ad-slot ad-slot--wide"
@@ -157,7 +151,6 @@
         </div>
       </div>
 
-      <!-- HOT + EMAIL -->
       <section class="section" id="hot" aria-labelledby="hot-heading">
         <div class="container mono-grid">
           <div
@@ -193,7 +186,6 @@
         </div>
       </section>
 
-      <!-- TRUST strip -->
       <section class="trust">
         <div class="container trust__inner">
           <div class="trust__item"><span aria-hidden="true">✓</span> Free to use</div>
@@ -203,7 +195,6 @@
         </div>
       </section>
 
-      <!-- FAQ — simple words -->
       <section class="section section--faq" id="faq" aria-labelledby="faq-heading">
         <div class="container">
           <h2 id="faq-heading" class="section__title section__title--center">Questions?</h2>
@@ -226,7 +217,7 @@
               <p>No. Look → tap → go. Three steps.</p>
             </details>
             <details class="faq-item">
-              <summary>Why do some links say “sponsored”?</summary>
+              <summary>Why do some links say "sponsored"?</summary>
               <p>
                 This site may earn a small fee if you buy something. You do not pay extra.
               </p>
@@ -235,7 +226,6 @@
         </div>
       </section>
 
-      <!-- Share this page -->
       <section class="section section--share" id="share">
         <div class="container">
           <div class="share-card">
@@ -260,11 +250,33 @@
         </div>
       </section>
 
-      <!-- Operator tools — collapsed, not visitor-facing -->
       <section class="section section--owner" id="owner">
         <div class="container">
-          <details class="owner-box">
-            <summary>Site owner tools (you can ignore this)</summary>
+          <details class="owner-box owner-box--next">
+            <summary>Site owner tools</summary>
+            <p class="owner-next__lead">
+              <strong>DealDoor</strong> is the only site. Two links already pay you:
+              OpenCode (AI code) and Koinly (crypto tax). HubSpot still needs
+              <code>set my hubspot link to PASTE</code> after they approve you.
+            </p>
+            <p>
+              <a class="btn btn--mega" href="taxes.html">Open job + coin taxes (Koinly) →</a>
+            </p>
+            <p>
+              <a class="btn btn--ghost" href="crypto-tax.html">Open the live crypto tax helper →</a>
+            </p>
+            <p>
+              <a class="btn btn--ghost" href="code.html">Open the live AI coder page →</a>
+            </p>
+            <p>
+              <a
+                class="btn btn--ghost"
+                href="https://www.hubspot.com/partners/affiliates"
+                target="_blank"
+                rel="noopener"
+                >Join HubSpot affiliates (free) →</a
+              >
+            </p>
             <div class="operator-bar">
               <div>
                 Clicks logged: <span id="click-count">0</span>
@@ -276,8 +288,7 @@
             <div id="operator-clicks" class="panel" hidden></div>
             <p class="tiny disclosure">
               Some links may pay this site a small fee if you buy — at no extra cost to you.
-              Not money or medical advice. Owner: put real affiliate tags in <code>js/niches.js</code>.
-              See <code>FREE-CHECKLIST.md</code> and <code>START-HERE.md</code>.
+              Not money or medical advice. Amazon comes later. See <code>START-HERE.md</code>.
             </p>
           </details>
         </div>
@@ -298,6 +309,7 @@
 
     <script src="js/affiliate.js"></script>
     <script src="js/click-store.js"></script>
+    <script src="js/payout-links.js"></script>
     <script src="js/niches.js"></script>
     <script src="js/app.js"></script>
   </body>
