@@ -20,6 +20,35 @@ var DEFAULT_AFFILIATE = {
  */
 var NICHES = [
   {
+    id: 'moms',
+    name: 'Mom tax credits',
+    icon: '👩‍👧‍👦',
+    focus: true,
+    pitch: 'Two kids. Side job. Check the work credit and kid credit.',
+    color: '#fb7185',
+    primaryCta: {
+      label: 'Open the mom tax page →',
+      baseUrl: 'moms.html',
+      partner: 'DealDoor mom credits',
+      network: 'internal'
+    },
+    partners: [
+      {
+        name: 'IRS work-credit tool',
+        baseUrl:
+          'https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit/use-the-eitc-assistant',
+        blurb: 'Free official check',
+        network: 'generic'
+      },
+      {
+        name: 'Also traded coins?',
+        baseUrl: 'taxes.html',
+        blurb: 'Job taxes + coin taxes',
+        network: 'internal'
+      }
+    ]
+  },
+  {
     id: 'code',
     name: 'AI code',
     icon: '⌨️',
@@ -320,10 +349,10 @@ var NICHES = [
 
 var FEATURED_PARTNER = {
   title: 'Start here',
-  name: 'Job taxes + coin taxes',
-  pitch: 'Got extra time to file? Coin taxes are still due Oct 15.',
-  baseUrl: 'taxes.html',
-  ctaLabel: 'Get the coin report free →',
+  name: 'Single mom, two kids, side job',
+  pitch: 'Work credit plus kid credit can sit near $9,000 if you qualify and file. Not a promise.',
+  baseUrl: 'moms.html',
+  ctaLabel: 'Check the credits (free) →',
   badge: 'Hot pick',
   network: 'internal'
 };
